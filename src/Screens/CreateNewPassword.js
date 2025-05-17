@@ -54,7 +54,7 @@ const CreateNewPassword = () => {
           <NavLink to="/verify">
           <button
             type="submit"
-            className="w-full py-3 rounded-full bg-gradient-to-br from-[#8B25FF] via-[#6225ff] to-[#350FDD] text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_#8B25FF] border border-[#ffffff30]"
+            className="w-full mt-5 py-3 rounded-full bg-gradient-to-br from-[#8B25FF] via-[#6225ff] to-[#350FDD] text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_#8B25FF] border border-[#ffffff30]"
           >
             ✅ Create New Password
           </button>
