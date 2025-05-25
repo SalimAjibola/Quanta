@@ -15,7 +15,7 @@ import {
   Menu,
 } from "lucide-react";
 
-const Dashboard = () => {
+const Downloaded = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -133,11 +133,9 @@ const Dashboard = () => {
             </ul>
           </nav>
         </div>
-        <NavLink to="/">
         <button className="flex items-center gap-3 text-gray-400 hover:text-red-500 transition mt-10">
           <LogOut size={18} /> Logout
         </button>
-        </NavLink>
       </aside>
 
       {/* Sidebar for mobile */}
@@ -288,83 +286,109 @@ const Dashboard = () => {
         </div>
 
         {/* Hero Banner */}
-        <div className="relative mb-10">
+        {/* <div className="relative mb-10">
           <img
-            src="https://image.tmdb.org/t/p/original/ulzhLuWrPK07P1YkdWQLZnQh1JL.jpg"
+            src="https://image.tmdb.org/t/p/original/6Lw54zxm6BAEKJeGlabyzzR5Juu.jpg"
             alt="Banner"
             className="w-full h-52 sm:h-64 md:h-72 object-cover rounded-xl"
           />
           <div className="absolute bottom-6 left-6">
             <h3 className="text-xl font-bold">Avengers Age of Ultron</h3>
             <p className="text-sm text-gray-300">Silver TV · 67k views · 9 hours ago</p>
+           <button className="bg-gradient-to-r from-purple-600 to-sky-600 px-4 py-2 rounded-full font-medium text-sm text-white">
+  Reminder
+</button>
           </div>
-        </div>
+        </div> */}
 
         {/* Trending Section */}
         <section className="mb-10">
-          <h2 className="text-xl font-semibold mb-4">Trending Video</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "JoJo's Bizarre Adventure",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/nRfhgnDmmoJrTuUZBeDAo5OKUYU.jpg",
-              },
-              {
-                title: "Rainmaker",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/cDQVS47ZiA3TsoIU6iTWhgZikoc.jpg",
-              },
-              {
-                title: "Locke & Key",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/yAYTYRgPVPHfcPVe70y7xkPrK2i.jpg",
-              },
-            ].map((item, i) => (
-              <div key={i} className="relative group">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="rounded-xl object-cover h-44 w-full"
-                />
-                <div className="absolute bottom-3 left-3">
-                  <h3 className="font-semibold text-white">{item.title}</h3>
-                  <button className="text-sm bg-gradient-to-r from-purple-600 to-sky-600 px-2 py-1 rounded mt-1">Watch</button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+  <h2 className="text-xl font-semibold mb-4">Download Videos</h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    {[
+      {
+        title: "Inception",
+        img: "https://image.tmdb.org/t/p/original/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
+        duration: "2h 28m",
+        watched: "1h 15m",
+      },
+      {
+        title: "Interstellar",
+        img: "https://image.tmdb.org/t/p/original/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg",
+        duration: "2h 49m",
+        watched: "1h 50m",
+      },
+      {
+        title: "The Dark Knight",
+        img: "https://image.tmdb.org/t/p/original/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+        duration: "2h 32m",
+        watched: "45m",
+      },
+      {
+        title: "Dune",
+        img: "https://image.tmdb.org/t/p/original/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
+        duration: "2h 35m",
+        watched: "2h 10m",
+      },
+      {
+        title: "Avatar: The Way of Water",
+        img: "https://image.tmdb.org/t/p/original/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
+        duration: "3h 12m",
+        watched: "1h 30m",
+      },
+      {
+        title: "Black Panther: Wakanda Forever",
+        img: "https://image.tmdb.org/t/p/original/sv1xJUazXeYqALzczSZ3O6nkH75.jpg",
+        duration: "2h 41m",
+        watched: "2h 5m",
+      },
+    ].map((item, i) => {
+      const timeToMinutes = (timeStr) => {
+        let hours = 0,
+          minutes = 0;
+        const hMatch = timeStr.match(/(\d+)h/);
+        const mMatch = timeStr.match(/(\d+)m/);
+        if (hMatch) hours = parseInt(hMatch[1], 10);
+        if (mMatch) minutes = parseInt(mMatch[1], 10);
+        return hours * 60 + minutes;
+      };
 
-        {/* Continue Watching */}
-        <section>
-          <h2 className="text-xl font-semibold mb-4">Continue Watching</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Vikings",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/u3oInkxcnNV2pZQbkFY3ovHYExR.jpg",
-              },
-              {
-                title: "Good Doctor",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/cXUqtadGsIcZDWUTrfnbDjAy8eN.jpg",
-              },
-              {
-                title: "Resident Evil",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/bJXqRRb87ObiJZh8dKLFz6DO9TZ.jpg",
-              },
-            ].map((item, i) => (
-              <div key={i} className="relative group">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="rounded-xl object-cover h-44 w-full"
-                />
-                <div className="absolute bottom-3 left-3">
-                  <h3 className="font-semibold text-white">{item.title}</h3>
-                  <p className="text-sm text-gray-300">Season 1</p>
-                </div>
+      const totalMinutes = timeToMinutes(item.duration);
+      const watchedMinutes = timeToMinutes(item.watched);
+      const progressPercent = Math.min(100, (watchedMinutes / totalMinutes) * 100);
+
+      return (
+        <div key={i} className="relative group bg-gray-800 rounded-xl overflow-hidden">
+          <img
+            src={item.img}
+            alt={item.title}
+            className="rounded-xl object-cover h-44 w-full"
+          />
+          <div className="absolute bottom-3 left-3 right-3 bg-black bg-opacity-60 p-3 rounded-md">
+            <h3 className="font-semibold text-white">{item.title}</h3>
+
+            {/* Progress bar with times */}
+            <div className="flex items-center mt-2 space-x-2 text-xs text-white font-mono select-none">
+              <span className="w-10 text-left">{item.watched}</span>
+              <div className="flex-1 h-2 bg-gray-600 rounded-full overflow-hidden">
+                <div
+                  className="h-2 bg-gradient-to-r from-purple-600 to-sky-600"
+                  style={{ width: `${progressPercent}%` }}
+                ></div>
               </div>
-            ))}
+              <span className="w-10 text-right">{item.duration}</span>
+            </div>
+
+            <button className="text-sm bg-gradient-to-r from-purple-600 to-sky-600 px-3 py-1 rounded mt-3">
+              Continue
+            </button>
           </div>
-        </section>
+        </div>
+      );
+    })}
+  </div>
+</section>
+
       </main>
 
       {/* Right Panel (hidden on small screens) */}
@@ -422,4 +446,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Downloaded;

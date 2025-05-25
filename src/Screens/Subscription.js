@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import firstbanner from "../Assets/Rectangle.png";
+import secondbanner from "../Assets/Group.png";
 import { NavLink } from "react-router-dom";
 import {
   Home,
@@ -13,9 +15,10 @@ import {
   HelpCircle,
   LogOut,
   Menu,
+  PlayCircle,
 } from "lucide-react";
 
-const Dashboard = () => {
+const Subscription = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -288,83 +291,155 @@ const Dashboard = () => {
         </div>
 
         {/* Hero Banner */}
-        <div className="relative mb-10">
+        {/* <div className="relative mb-10">
           <img
-            src="https://image.tmdb.org/t/p/original/ulzhLuWrPK07P1YkdWQLZnQh1JL.jpg"
+            src="https://image.tmdb.org/t/p/original/6Lw54zxm6BAEKJeGlabyzzR5Juu.jpg"
             alt="Banner"
             className="w-full h-52 sm:h-64 md:h-72 object-cover rounded-xl"
           />
           <div className="absolute bottom-6 left-6">
             <h3 className="text-xl font-bold">Avengers Age of Ultron</h3>
             <p className="text-sm text-gray-300">Silver TV · 67k views · 9 hours ago</p>
+           <button className="bg-gradient-to-r from-purple-600 to-sky-600 px-4 py-2 rounded-full font-medium text-sm text-white">
+  Reminder
+</button>
           </div>
-        </div>
+        </div> */}
 
         {/* Trending Section */}
         <section className="mb-10">
-          <h2 className="text-xl font-semibold mb-4">Trending Video</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "JoJo's Bizarre Adventure",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/nRfhgnDmmoJrTuUZBeDAo5OKUYU.jpg",
-              },
-              {
-                title: "Rainmaker",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/cDQVS47ZiA3TsoIU6iTWhgZikoc.jpg",
-              },
-              {
-                title: "Locke & Key",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/yAYTYRgPVPHfcPVe70y7xkPrK2i.jpg",
-              },
-            ].map((item, i) => (
-              <div key={i} className="relative group">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="rounded-xl object-cover h-44 w-full"
-                />
-                <div className="absolute bottom-3 left-3">
-                  <h3 className="font-semibold text-white">{item.title}</h3>
-                  <button className="text-sm bg-gradient-to-r from-purple-600 to-sky-600 px-2 py-1 rounded mt-1">Watch</button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
 
-        {/* Continue Watching */}
-        <section>
-          <h2 className="text-xl font-semibold mb-4">Continue Watching</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Vikings",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/u3oInkxcnNV2pZQbkFY3ovHYExR.jpg",
-              },
-              {
-                title: "Good Doctor",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/cXUqtadGsIcZDWUTrfnbDjAy8eN.jpg",
-              },
-              {
-                title: "Resident Evil",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/bJXqRRb87ObiJZh8dKLFz6DO9TZ.jpg",
-              },
-            ].map((item, i) => (
-              <div key={i} className="relative group">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="rounded-xl object-cover h-44 w-full"
-                />
-                <div className="absolute bottom-3 left-3">
+      {/* Hero Banner 1 */}
+      <div className="w-full mb-6">
+  <div className="relative rounded-xl overflow-hidden h-40 sm:h-48 bg-gray-800">
+    <img
+      src={firstbanner}
+      alt="Hero Banner 1"
+      className="object-fit w-full h-full opacity-70" // opacity for transparency
+    />
+  </div>
+</div>
+
+{/* Hero Banner 2 */}
+<div className="w-full mb-6">
+  <div className="relative rounded-xl overflow-hidden h-40 sm:h-48 bg-gray-800">
+    <img
+      src={secondbanner}
+      alt="Hero Banner 2"
+      className="object-contain w-full h-full opacity-100"
+    />
+  </div>
+</div>
+
+
+      <h2 className="text-xl font-semibold mb-4">Premium Videos 👑</h2>
+      {/* First Row of Movies (3 cards) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+        {[
+          {
+            title: "Echoes of Tomorrow",
+            genre: "Sci-Fi, Thriller",
+            img: "https://image.tmdb.org/t/p/original/mDfJG3LC3Dqb67AZ52x3Z0jU0uB.jpg",
+            duration: "2h 15m",
+          },
+          {
+            title: "Oppenheimer",
+            genre: "Drama, History",
+            img: "https://image.tmdb.org/t/p/w500/ptpr0kGAckfQkJeJIt8st5dglvd.jpg",
+            duration: "3h 0m",
+          },
+          {
+            title: "Barbie",
+            genre: "Comedy, Adventure",
+            img: "https://image.tmdb.org/t/p/w500/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
+            duration: "1h 54m",
+          },
+        ].map((item, i) => (
+          <div
+            key={i}
+            className="relative group bg-gray-900 rounded-xl overflow-hidden"
+          ><NavLink 
+          to="/payment">
+            <img
+              src={item.img}
+              alt={item.title}
+              className="rounded-xl object-cover h-44 w-full"
+            />
+            <div className="absolute bottom-3 left-3 right-3 bg-black bg-opacity-70 p-3 rounded-md">
+              <div className="flex justify-between items-center">
+                <div>
                   <h3 className="font-semibold text-white">{item.title}</h3>
-                  <p className="text-sm text-gray-300">Season 1</p>
+                  <p className="text-xs text-gray-300">{item.genre}</p>
+                  <p className="text-xs text-gray-300">{item.duration}</p>
                 </div>
+                <button className="text-xs bg-gradient-to-r from-purple-600 to-sky-600 px-3 py-1 rounded flex items-center gap-1 text-white">
+              <PlayCircle className="w-4 h-4 text-purple-200" />
+              Watch
+            </button>
               </div>
-            ))}
+            </div>
+            </NavLink>
           </div>
-        </section>
+        ))}
+      </div>
+
+      {/* Second Row of Movies (3 cards) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          {
+            title: "John Wick: Chapter 4",
+            genre: "Action, Thriller",
+            img: "https://image.tmdb.org/t/p/w500/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
+            duration: "2h 49m",
+          },
+          {
+            title: "The Super Mario Bros. Movie",
+            genre: "Animation, Family",
+            img: "https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg",
+            duration: "1h 32m",
+          },
+          {
+            title: "Fast X",
+            genre: "Action, Crime",
+            img: "https://image.tmdb.org/t/p/w500/fiVW06jE7z9YnO4trhaMEdclSiC.jpg",
+            duration: "2h 21m",
+          },
+        ].map((item, i) => (
+            <NavLink 
+            to="/payment">
+                <div
+            key={i}
+            className="relative group bg-gray-900 rounded-xl overflow-hidden"
+          >
+            
+            <img
+              src={item.img}
+              alt={item.title}
+              className="rounded-xl object-cover h-44 w-full"
+            />
+            <div className="absolute bottom-3 left-3 right-3 bg-black bg-opacity-70 p-3 rounded-md">
+              <div className="flex justify-between items-center">
+                <div>
+                  <h3 className="font-semibold text-white">{item.title}</h3>
+                  <p className="text-xs text-gray-300">{item.genre}</p>
+                  <p className="text-xs text-gray-300">{item.duration}</p>
+                </div>
+                <button className="text-xs bg-gradient-to-r from-purple-600 to-sky-600 px-3 py-1 rounded flex items-center gap-1 text-white">
+                  <PlayCircle className="w-4 h-4 text-purple-200" />
+                  Watch
+                </button>
+              </div>
+            </div>
+            
+          </div>
+          </NavLink>
+        ))}
+      </div>
+    </section>
+
+
+
+
       </main>
 
       {/* Right Panel (hidden on small screens) */}
@@ -397,29 +472,49 @@ const Dashboard = () => {
 
         {/* Comments Section */}
         <div>
-          <h3 className="text-sm text-gray-400 mb-3">Comments</h3>
-          <div className="space-y-4 text-sm">
-            {[...Array(5)].map((_, i) => (
-              <div key={i} className="flex gap-2">
-                <img
-                  src={`https://randomuser.me/api/portraits/lego/${i}.jpg`}
-                  alt="user"
-                  className="w-8 h-8 rounded-full"
-                />
-                <div>
-                  <p className="font-semibold">@user{i}</p>
-                  <p className="text-gray-400 text-xs mb-1">
-                    This movie is very interesting. Silver TV nailed it.
-                  </p>
-                  <span className="text-xs text-gray-500">Reply · {i + 1} hour ago</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+  <h3 className="text-sm text-gray-400 mb-3">Top Picks</h3>
+  <div className="space-y-4 text-sm">
+    {[
+      {
+        title: "The Super Mario Bros. Movie",
+        img: "https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg",
+      },
+      {
+        title: "Dune: Part Two",
+        img: "https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",
+      },
+      {
+        title: "The Creator",
+        img: "https://image.tmdb.org/t/p/w500/vBZ0qvaRxqEhZwl6LWmruJqWE8Z.jpg",
+      },
+      {
+        title: "Killers of the Flower Moon",
+        img: "https://image.tmdb.org/t/p/w500/dB6Krk806zeqd0YNp2ngQ9zXteH.jpg",
+      },
+      {
+        title: "Aquaman and the Lost Kingdom",
+        img: "https://image.tmdb.org/t/p/w500/8xV47NDrjdZDpkVcCFqkdHa3T0C.jpg",
+      },
+    ].map((movie, i) => (
+        
+      <div key={i} className="flex gap-3 items-center">
+        <NavLink 
+        to="/payment">
+        <img
+          src={movie.img}
+          alt={movie.title}
+          className="w-12 h-16 rounded-md object-cover"
+        />
+        <p className="text-white font-medium text-sm">{movie.title}</p>
+        </NavLink>
+      </div>
+      
+    ))}
+  </div>
+</div>
       </aside>
     </div>
   );
 };
 
-export default Dashboard;
+export default Subscription;

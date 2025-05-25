@@ -15,7 +15,7 @@ import {
   Menu,
 } from "lucide-react";
 
-const Dashboard = () => {
+const ComingSoon = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -290,34 +290,37 @@ const Dashboard = () => {
         {/* Hero Banner */}
         <div className="relative mb-10">
           <img
-            src="https://image.tmdb.org/t/p/original/ulzhLuWrPK07P1YkdWQLZnQh1JL.jpg"
+            src="https://image.tmdb.org/t/p/original/6Lw54zxm6BAEKJeGlabyzzR5Juu.jpg"
             alt="Banner"
             className="w-full h-52 sm:h-64 md:h-72 object-cover rounded-xl"
           />
           <div className="absolute bottom-6 left-6">
-            <h3 className="text-xl font-bold">Avengers Age of Ultron</h3>
-            <p className="text-sm text-gray-300">Silver TV · 67k views · 9 hours ago</p>
+            {/* <h3 className="text-xl font-bold">Avengers Age of Ultron</h3>
+            <p className="text-sm text-gray-300">Silver TV · 67k views · 9 hours ago</p> */}
+           <button className="bg-gradient-to-r from-purple-600 to-sky-600 px-4 py-2 rounded-full font-medium text-sm text-white">
+  Reminder
+</button>
           </div>
         </div>
 
         {/* Trending Section */}
         <section className="mb-10">
-          <h2 className="text-xl font-semibold mb-4">Trending Video</h2>
+          <h2 className="text-xl font-semibold mb-4">Free Videos</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[
-              {
-                title: "JoJo's Bizarre Adventure",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/nRfhgnDmmoJrTuUZBeDAo5OKUYU.jpg",
-              },
-              {
-                title: "Rainmaker",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/cDQVS47ZiA3TsoIU6iTWhgZikoc.jpg",
-              },
-              {
-                title: "Locke & Key",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/yAYTYRgPVPHfcPVe70y7xkPrK2i.jpg",
-              },
-            ].map((item, i) => (
+  {
+    title: "Inception",
+    img: "https://image.tmdb.org/t/p/original/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
+  },
+  {
+    title: "Interstellar",
+    img: "https://image.tmdb.org/t/p/original/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg",
+  },
+  {
+    title: "The Dark Knight",
+    img: "https://image.tmdb.org/t/p/original/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+  },
+].map((item, i) => (
               <div key={i} className="relative group">
                 <img
                   src={item.img}
@@ -326,7 +329,7 @@ const Dashboard = () => {
                 />
                 <div className="absolute bottom-3 left-3">
                   <h3 className="font-semibold text-white">{item.title}</h3>
-                  <button className="text-sm bg-gradient-to-r from-purple-600 to-sky-600 px-2 py-1 rounded mt-1">Watch</button>
+                  <button className="text-sm bg-gradient-to-r from-purple-600 to-sky-600 px-2 py-1 rounded mt-1">Reminder</button>
                 </div>
               </div>
             ))}
@@ -335,22 +338,22 @@ const Dashboard = () => {
 
         {/* Continue Watching */}
         <section>
-          <h2 className="text-xl font-semibold mb-4">Continue Watching</h2>
+          <h2 className="text-xl font-semibold mb-4">Premium Videos 👑</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[
-              {
-                title: "Vikings",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/u3oInkxcnNV2pZQbkFY3ovHYExR.jpg",
-              },
-              {
-                title: "Good Doctor",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/cXUqtadGsIcZDWUTrfnbDjAy8eN.jpg",
-              },
-              {
-                title: "Resident Evil",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/bJXqRRb87ObiJZh8dKLFz6DO9TZ.jpg",
-              },
-            ].map((item, i) => (
+  {
+    title: "Dune",
+    img: "https://image.tmdb.org/t/p/original/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
+  },
+  {
+    title: "Avatar: The Way of Water",
+    img: "https://image.tmdb.org/t/p/original/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
+  },
+  {
+    title: "Black Panther: Wakanda Forever",
+    img: "https://image.tmdb.org/t/p/original/sv1xJUazXeYqALzczSZ3O6nkH75.jpg",
+  },
+].map((item, i) => (
               <div key={i} className="relative group">
                 <img
                   src={item.img}
@@ -358,8 +361,8 @@ const Dashboard = () => {
                   className="rounded-xl object-cover h-44 w-full"
                 />
                 <div className="absolute bottom-3 left-3">
-                  <h3 className="font-semibold text-white">{item.title}</h3>
-                  <p className="text-sm text-gray-300">Season 1</p>
+                <h3 className="font-semibold text-white">{item.title}</h3>
+                <button className="text-sm bg-gradient-to-r from-purple-600 to-sky-600 px-2 py-1 rounded mt-1">Reminder 👑</button>
                 </div>
               </div>
             ))}
@@ -422,4 +425,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default ComingSoon;

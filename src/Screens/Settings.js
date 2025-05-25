@@ -1,4 +1,11 @@
 import React, { useState } from "react";
+import first from "../Assets/Frame.png";
+import second from "../Assets/User.png";
+import name from "../Assets/Name.png";
+import about from "../Assets/About.png";
+import email from "../Assets/email.png";
+import upload from "../Assets/upload.png";
+import social from "../Assets/social.png";
 import { NavLink } from "react-router-dom";
 import {
   Home,
@@ -15,7 +22,7 @@ import {
   Menu,
 } from "lucide-react";
 
-const Dashboard = () => {
+const Settings = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -288,83 +295,66 @@ const Dashboard = () => {
         </div>
 
         {/* Hero Banner */}
-        <div className="relative mb-10">
+        {/* <div className="relative mb-10">
           <img
-            src="https://image.tmdb.org/t/p/original/ulzhLuWrPK07P1YkdWQLZnQh1JL.jpg"
+            src="https://image.tmdb.org/t/p/original/6Lw54zxm6BAEKJeGlabyzzR5Juu.jpg"
             alt="Banner"
             className="w-full h-52 sm:h-64 md:h-72 object-cover rounded-xl"
           />
           <div className="absolute bottom-6 left-6">
             <h3 className="text-xl font-bold">Avengers Age of Ultron</h3>
             <p className="text-sm text-gray-300">Silver TV · 67k views · 9 hours ago</p>
+           <button className="bg-gradient-to-r from-purple-600 to-sky-600 px-4 py-2 rounded-full font-medium text-sm text-white">
+  Reminder
+</button>
           </div>
+        </div> */}
+
+       {/* Tabs */}
+       <div className="flex gap-6 p-4 text-sm border-b border-gray-800">
+          <button className="text-purple-500 border-b-2 border-purple-500 pb-1">My Profile</button>
+          <button className="text-gray-400">Password</button>
+          <button className="text-gray-400">Notification</button>
         </div>
 
-        {/* Trending Section */}
-        <section className="mb-10">
-          <h2 className="text-xl font-semibold mb-4">Trending Video</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "JoJo's Bizarre Adventure",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/nRfhgnDmmoJrTuUZBeDAo5OKUYU.jpg",
-              },
-              {
-                title: "Rainmaker",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/cDQVS47ZiA3TsoIU6iTWhgZikoc.jpg",
-              },
-              {
-                title: "Locke & Key",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/yAYTYRgPVPHfcPVe70y7xkPrK2i.jpg",
-              },
-            ].map((item, i) => (
-              <div key={i} className="relative group">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="rounded-xl object-cover h-44 w-full"
-                />
-                <div className="absolute bottom-3 left-3">
-                  <h3 className="font-semibold text-white">{item.title}</h3>
-                  <button className="text-sm bg-gradient-to-r from-purple-600 to-sky-600 px-2 py-1 rounded mt-1">Watch</button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+        {/* Form */}
+        <img
+        src={first}
+        alt="Profile Details" />
 
-        {/* Continue Watching */}
-        <section>
-          <h2 className="text-xl font-semibold mb-4">Continue Watching</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Vikings",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/u3oInkxcnNV2pZQbkFY3ovHYExR.jpg",
-              },
-              {
-                title: "Good Doctor",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/cXUqtadGsIcZDWUTrfnbDjAy8eN.jpg",
-              },
-              {
-                title: "Resident Evil",
-                img: "https://media.themoviedb.org/t/p/w220_and_h330_face/bJXqRRb87ObiJZh8dKLFz6DO9TZ.jpg",
-              },
-            ].map((item, i) => (
-              <div key={i} className="relative group">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="rounded-xl object-cover h-44 w-full"
-                />
-                <div className="absolute bottom-3 left-3">
-                  <h3 className="font-semibold text-white">{item.title}</h3>
-                  <p className="text-sm text-gray-300">Season 1</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+        <img
+        src={second}
+        alt="Profile" />
+
+<img
+        src={name}
+        alt="Profile" 
+        className="mb-4"/>
+<img
+        src={about}
+        alt="Profile" 
+        className="mb-4"/>
+<img
+        src={email}
+        alt="Profile" 
+        className="mb-4"/>
+
+<img
+        src={upload}
+        alt="Profile" 
+        className="mb-4"/>
+
+<img
+        src={social}
+        alt="Profile" 
+        className="mb-4"/>
+        
+        <div className="flex justify-end">
+  <button className="bg-gradient-to-r from-purple-600 to-sky-600 px-6 py-2 rounded-full font-medium text-sm w-40">
+    Submit
+  </button>
+</div>
+
       </main>
 
       {/* Right Panel (hidden on small screens) */}
@@ -397,29 +387,51 @@ const Dashboard = () => {
 
         {/* Comments Section */}
         <div>
-          <h3 className="text-sm text-gray-400 mb-3">Comments</h3>
-          <div className="space-y-4 text-sm">
-            {[...Array(5)].map((_, i) => (
-              <div key={i} className="flex gap-2">
-                <img
-                  src={`https://randomuser.me/api/portraits/lego/${i}.jpg`}
-                  alt="user"
-                  className="w-8 h-8 rounded-full"
-                />
-                <div>
-                  <p className="font-semibold">@user{i}</p>
-                  <p className="text-gray-400 text-xs mb-1">
-                    This movie is very interesting. Silver TV nailed it.
-                  </p>
-                  <span className="text-xs text-gray-500">Reply · {i + 1} hour ago</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+  <h3 className="text-sm text-gray-400 mb-3">Top Picks</h3>
+  <div className="space-y-4 text-sm">
+    {[
+      {
+        title: "The Super Mario Bros. Movie",
+        img: "https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg",
+      },
+      {
+        title: "Dune: Part Two",
+        img: "https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",
+      },
+      {
+        title: "The Creator",
+        img: "https://image.tmdb.org/t/p/w500/vBZ0qvaRxqEhZwl6LWmruJqWE8Z.jpg",
+      },
+      {
+        title: "Killers of the Flower Moon",
+        img: "https://image.tmdb.org/t/p/w500/dB6Krk806zeqd0YNp2ngQ9zXteH.jpg",
+      },
+      {
+        title: "Aquaman and the Lost Kingdom",
+        img: "https://image.tmdb.org/t/p/w500/8xV47NDrjdZDpkVcCFqkdHa3T0C.jpg",
+      },
+    ].map((movie, i) => (
+      <div key={i} className="flex gap-3 items-center">
+        <img
+          src={movie.img}
+          alt={movie.title}
+          className="w-12 h-16 rounded-md object-cover"
+        />
+        <p className="text-white font-medium text-sm">{movie.title}</p>
+      </div>
+    ))}
+  </div>
+</div>
       </aside>
     </div>
   );
 };
 
-export default Dashboard;
+export default Settings;
+
+
+
+
+
+
+
